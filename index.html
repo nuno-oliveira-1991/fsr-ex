@@ -1,0 +1,40 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>React Puro</title>
+    </head>
+
+    <body>
+        <div id="root">Não funcionaaaaaa</div>
+
+        <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+
+        <script>
+            //Trabalhar aqui!
+
+            //CreateElement & CreateRoot
+            const element = React.createElement("div", {}, [
+                React.createElement("h1", {}, "Hello world"),
+                React.createElement("h1", {}, "Hello world2")
+            ]);
+            
+            console.log(element);
+
+            const root = document.getElementById("root");
+            //V18
+            // const main = ReactDOM.createRoot(root);
+
+            // main.render(element);
+
+            //V17
+            ReactDOM.render(element, root)
+
+
+
+
+        </script>
+    </body>
+
+</html>
