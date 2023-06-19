@@ -1,4 +1,4 @@
-# Exercicio JSX - Formulário Simples
+# Exercicio JSX - Twitter Card
 
 Neste exercicio vamos construir um simples Card para uma rede social:
 
