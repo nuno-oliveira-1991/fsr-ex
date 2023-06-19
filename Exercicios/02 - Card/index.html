@@ -1,23 +1,60 @@
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <titulo>Exercicio 1 - HTML</titulo>
-        <link rel="stylesheet" href="../shared/reset.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2 - HTML</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    <body>
-        <div id="root">Não funciona!</div>
-        <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
-        <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+<body>
+    <div id="root">Não funciona!</div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
 
-        <script>
-            // 1. Criar elementos em React
-            // 2. Renderizar a aplicação
-        </script>
-    </body>
+    <script>
+
+        // 1. Criar elementos em React
+
+
+        const arraySkillsNames = ["HTML", "CSS", "React"];
+
+        const arraySkills = arraySkillsNames.map((skillName) => {
+            let skill = React.createElement("span", { className: "skill" }, skillName);
+            return skill;
+        });
+
+        const arraySocialsNames = ["Facebook", "LinkedIn", "Twitter"]
+
+        const arraySocials = arraySocialsNames.map((socialName) => {
+            let social = React.createElement("a", { href: "link_para_rede", className: "social" }, socialName);
+            return social;
+        });
+
+        console.log(arraySocialsNames)
+        console.log(arraySocials)
+
+        const card = React.createElement("div", { className: "card" }, [
+            React.createElement("img", { src: "https://www.fakepersongenerator.com/Face/male/male1085727541717.jpg", alt: "" }),
+            React.createElement("h3", {}, "Nome"),
+            React.createElement("p", { className: "description" }, "A tua breve descrição..."),
+            React.createElement("div", { className: "skill" }, 
+                ...arraySkills
+            ),
+            React.createElement("div", { className: "social-networks" }, 
+                ...arraySocials
+            )
+        ]);
+
+        // 2. Renderizar a aplicação
+
+        const root = document.getElementById("root");
+        const main = ReactDOM.createRoot(root);
+        main.render(card);
+
+    </script>
+</body>
 
 </html>
