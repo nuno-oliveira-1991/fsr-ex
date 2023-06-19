@@ -1,0 +1,44 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JSX - Exercicio 1</title>
+
+        <link rel="stylesheet" href="../../../shared/reset.css">
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+        <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <!-- Trabalhar aqui! -->
+
+        <script type="text/babel">
+
+        
+
+            const form = (
+                <form onSubmit={ (event) => {
+                    event.preventDefault()
+                    const input = document.getElementById("Pesquisar")
+                    console.log(input.value)
+                } }>
+                    <label htmlFor="Pesquisar">Pesquisar</label>
+                    <input id="Pesquisar" name="Pesquisar" type="text"  />
+                    <button type="submit" className="submit-btn">Submeter</button>
+                </form>
+            );
+
+            const root = document.getElementById("root");
+            const mainContainer = ReactDOM.createRoot(root);
+            mainContainer.render(form);
+
+        </script>
+    </body>
+
+</html>
