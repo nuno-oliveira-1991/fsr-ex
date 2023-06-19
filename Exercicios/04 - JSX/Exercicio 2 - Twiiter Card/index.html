@@ -30,17 +30,20 @@
         	published: "15 de Janeiro as 9:45pm",
         };
 
+        // restructuring the object twitterMessage to avoid repeting it when navigating throught its properties
+        const { author, content, published } = twitterMessage
+
         const card = (
             <article>
                 <header>
-                    <img src={ twitterMessage.author.avatarSrc } alt={ twitterMessage.author.avatarDescription} />
-                    <a href={ "user/" + twitterMessage.author.handle }>
-                        { twitterMessage.author.name }
+                    <img src={ author.avatarSrc } alt={ author.avatarDescription} />
+                    <a href={ `user/${author.handle}` }>
+                        { author.name }
                     </a>
                 </header>
-                    <p>{ twitterMessage.content }</p>
+                    <p>{ content }</p>
                 <footer>
-                    <p>{ "Postado em " + twitterMessage.published }</p>
+                    <p>{ `Postado em ${published}` }</p>
                 </footer>
             </article>
         );
