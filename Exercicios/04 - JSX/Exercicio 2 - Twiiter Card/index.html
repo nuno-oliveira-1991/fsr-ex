@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio 2 - Twitter Card</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
@@ -10,8 +11,45 @@
 
     <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
-
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
      <!-- Trabalhar aqui! -->
+
+     <script type="text/babel">
+
+        const twitterMessage = {
+        	author: {
+        		avatarSrc:
+        			"https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairTheCaesarSidePart&accessoriesType=Sunglasses&hairColor=BrownDark&facialHairType=BeardLight&facialHairColor=Black&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light",
+        		avatarDescription: "Cartoon Men",
+        		name: "Nelson Fernandes",
+        		handle: "nelsonfernandes",
+        	},
+        	content:
+        		"Os últimos serão os primeiros e os do meio sempre serão os do meio.",
+        	published: "15 de Janeiro as 9:45pm",
+        };
+
+        const card = (
+            <article>
+                <header>
+                    <img src={ twitterMessage.author.avatarSrc } alt={ twitterMessage.author.avatarDescription} />
+                    <a href={ "user/" + twitterMessage.author.handle }>
+                        { twitterMessage.author.name }
+                    </a>
+                </header>
+                    <p>{ twitterMessage.content }</p>
+                <footer>
+                    <p>{ "Postado em " + twitterMessage.published }</p>
+                </footer>
+            </article>
+        );
+
+        const root = document.getElementById("root");
+        const mainContainer = ReactDOM.createRoot(root);
+        mainContainer.render(card);
+
+    </script>
 
 </body>
 </html>
