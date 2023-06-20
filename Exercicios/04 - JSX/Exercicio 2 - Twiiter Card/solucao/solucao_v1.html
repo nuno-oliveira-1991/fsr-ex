@@ -1,0 +1,54 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercicio 2 - Twitter Card</title>
+
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+
+    <body>
+
+        <div id="root"></div>
+
+        <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/babel">
+            const twiterMessage = {
+                author: {
+                    avatarSrc: 'https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairTheCaesarSidePart&accessoriesType=Sunglasses&hairColor=BrownDark&facialHairType=BeardLight&facialHairColor=Black&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light',
+                    avatarDescription: 'Cartoon Men',
+                    name: 'Nelson Fernandes',
+                    handle: 'nelsonfernandes',
+                },
+                content: 'Os últimos serão os primeiros e os do meio sempre serão os do meio.',
+                published: '15 de Janeiro as 9:45pm',
+            };
+
+            const element = (
+                <article>
+                    <header>
+                        <img
+                            alt={twiterMessage.author.avatarDescription}
+                            src={twiterMessage.author.avatarSrc}
+                        />
+                        <a href={`/utilizadores/${twiterMessage.author.hadle}`}>{twiterMessage.author.name}</a>
+                    </header>
+                    <p>
+                       {twiterMessage.content}
+                    </p>
+                    <footer>Postado em {' '} {twiterMessage.published}</footer>
+                </article>
+            );
+
+            const container = document.querySelector('#root');
+            const root = ReactDOM.createRoot(container);
+            root.render(element);
+        </script>
+
+    </body>
+
+</html>

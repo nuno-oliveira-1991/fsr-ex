@@ -1,0 +1,65 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercicio 2 - Twitter Card</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <div id="root"></div>
+
+        <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+
+        <!-- Inserir Script Babel -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <!-- Tag Script temos que lhe indicar que precisa de ser tratado pelo babel "text/babel" -->
+        <script type="text/babel">
+
+            const twiterMessage = {
+                author: {
+                    avatarSrc:
+                        "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairTheCaesarSidePart&accessoriesType=Sunglasses&hairColor=BrownDark&facialHairType=BeardLight&facialHairColor=Black&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light",
+                    avatarDescription: "Cartoon Men",
+                    name: "Nelson Fernandes",
+                    handle: "nelsonfernandes",
+                },
+                content:
+                    "Os últimos serão os primeiros e os do meio sempre serão os do meio.",
+                published: "15 de Janeiro as 9:45pm",
+            };
+
+            const { content, published, author } = twiterMessage;
+            const { avatarSrc, name, avatarDescription, handle } = author;
+
+            const element = (
+                <article>
+                    <header>
+
+                        <img src={avatarSrc}
+                            alt={avatarDescription} />
+
+                        <a href={`/user/${handle}`} >{name} </a>
+                    </header>
+                    <p>{content}</p>
+                    <footer>
+                        {`Postado em ${published}`}
+                    </footer>
+                </article>
+            )
+
+            const root = ReactDOM.createRoot(document.getElementById('root'));
+
+            root.render(element)
+
+
+        </script>
+
+
+    </body>
+
+</html>
