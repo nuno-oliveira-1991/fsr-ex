@@ -1,0 +1,51 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercicio 1 - HTML</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div id="root">Não funciona!</div>
+        <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+
+        <!-- <div class="main-container">
+            <h2 class="titulo">Hello Edit!</h2>
+            <div class="cubo"></div>
+            <div class="cubo"></div>
+            <div class="cubo"></div>
+            <div class="cubo"></div>
+            <div class="cubo"></div>
+            <div class="cubo"></div>
+        </div> -->
+
+        <script>
+            // 1. Criar elementos em React
+            const element = React.createElement("div", {
+                className: "main-container",
+            }, [
+                React.createElement("h2", { className: "titulo"}, "Hello Edit!"),
+                React.createElement("div", { className: "cubo"}),
+                React.createElement("div", { className: "cubo"}),
+                React.createElement("div", { className: "cubo"}),
+                React.createElement("div", { className: "cubo"}),
+                React.createElement("div", { className: "cubo"}),
+                React.createElement("div", { className: "cubo"})
+            ])
+
+            // 2. Renderizar a aplicação
+            const root = document.getElementById("root");
+
+            const mainContainer = ReactDOM.createRoot(root);
+
+            mainContainer.render(element);
+
+        </script>
+    </body>
+
+</html>
