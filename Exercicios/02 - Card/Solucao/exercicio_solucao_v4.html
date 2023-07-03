@@ -1,0 +1,81 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <titulo>React Puro</titulo>
+    </head>
+
+    <body>
+        <div id="root">Não funciona</div>
+
+
+
+
+        <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+
+        <!-- 
+
+<div class="card">
+    <img src="*path para imagem de perfil*" />
+    <h3>Nome</h3>
+    <p class="description">A tua breve descrição...</p>
+
+    <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">React</div>
+    </div>
+
+    <div class="socials-networks">
+        <a href="#link_para_rede" class="social">Facebook</a>
+        <a href="#link_para_rede" class="social">Linkedin</a>
+        <a href="#link_para_rede" class="social">Twitter</a>
+    </div>
+
+</div>
+         -->
+
+        <script>
+
+            // 1 º Criar o Elemento
+
+            const avatarImage = React.createElement("img", { src: "https://www.fakepersongenerator.com/Face/male/male1085727541717.jpg"})
+
+            const name = React.createElement("h3", {}, "Nerso");
+            
+            const description = React.createElement("p", {}, "Lorem ipsum....")
+
+
+            const Skill = (prop) => {
+                return  React.createElement("div", {className: "skill"}, prop)
+            }
+
+            const SKILLS_ARRAY = ["HTML", "CSS", "REACT"];
+
+            const skillArr = SKILLS_ARRAY.map((skill) => {
+                return Skill(skill)
+            })
+
+            const Skills = () => {
+                return React.createElement("div", {className: "skills"}, skillArr)
+            }
+
+            const card = React.createElement("div", {className: "card"},
+                avatarImage,
+                name,
+                description,
+                Skills()
+            )
+
+
+            // 2. Renderizar a aplicação
+            const mainContainer = ReactDOM.createRoot(document.getElementById("root"));
+
+            mainContainer.render(card);
+        </script>
+    </body>
+
+</html>

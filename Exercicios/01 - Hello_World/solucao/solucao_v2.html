@@ -25,28 +25,25 @@
         </div> -->
 
         <script>
-            // 1. Criar elementos em React
+          
+            
+            //Criamos o elemento Cuno para reaproveitarmos 
             const cubo = React.createElement("div", { className: "cubo"});
 
-
-            const ArrayDeCubos = [];
-
-            for (i = 0; i < 6; i++){
-                ArrayDeCubos.push(cubo);
-            }
-
+            // 1. Criar elementos em React
             const element = React.createElement("div", {
                 className: "main-container",
             }, [
                 React.createElement("h2", { className: "titulo"}, "Hello Edit!"),
-                ...ArrayDeCubos
+                cubo,
+                cubo,
+                cubo,
+                cubo,
+                cubo,
+                cubo
             ])
 
-            console.log(element)
-
-
             // 2. Renderizar a aplicação
-
             const root = document.getElementById("root");
 
             const mainContainer = ReactDOM.createRoot(root);

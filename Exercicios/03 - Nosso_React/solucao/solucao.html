@@ -1,0 +1,36 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <>Exercicio 3 - Fake React</>
+    </head>
+
+    <body>
+        <div id="root">Não funciona!</div>
+
+        <script>
+            function render(elementoReact, rootDOMElement) {
+                // 1 - Criar Elemento DOM
+                const domElement = document.createElement("a");
+
+                // 2 - Atualizar as propriedades
+
+            }
+
+            const elementoReact = {
+                type: 'a',
+                props: {
+                    href: 'https://youtube.com/',
+                },
+                children: 'Ver no youtube',
+            };
+
+            const rootDOMElement =
+                document.querySelector('#root');
+
+            render(elementoReact, rootDOMElement);
+        </script>
+    </body>
+
+</html>
